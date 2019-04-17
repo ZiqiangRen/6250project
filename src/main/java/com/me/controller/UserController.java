@@ -239,6 +239,7 @@ public class UserController {
 		Random rand = new Random();
 		int randomNum1 = rand.nextInt(5000000);
 		int randomNum2 = rand.nextInt(5000000);
+		System.out.println("can we reach here?");
 		try {
 			String str = "http://localhost:8080/finalproject/user/validateemail.htm?email=" + useremail + "&key1=" + randomNum1
 					+ "&key2=" + randomNum2;
@@ -254,13 +255,16 @@ public class UserController {
 	}
 
 	public void sendEmail(String useremail, String message) {
+		System.out.println("Email will be sent");
+		System.out.println(useremail);
+		System.out.println(message);
 		try {
 			Email email = new SimpleEmail();
 			email.setHostName("smtp.googlemail.com");
 			email.setSmtpPort(465);
 			email.setAuthenticator(new DefaultAuthenticator("contactapplication2018@gmail.com", "springmvc"));
 			email.setSSLOnConnect(true);
-			email.setFrom("no-reply@msis.neu.edu"); // This user email does not
+			email.setFrom("ren.ziq@husky.neu.edu"); // This user email does not
 													// exist
 			email.setSubject("Password Reminder");
 			email.setMsg(message); // Retrieve email from the DAO and send this

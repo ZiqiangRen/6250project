@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
-
+import com.me.dao.*;
 import com.me.pojo.Restaurant;
 import com.me.pojo.User;
 
